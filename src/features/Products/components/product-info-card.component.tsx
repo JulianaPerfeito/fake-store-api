@@ -7,15 +7,16 @@ import {
   PriceText,
 } from "./product-info-card.style";
 import { Button } from "react-native-paper";
+import Product from "../../../models/product";
 
-export const ProductInfoCard = () => {
+export const ProductInfoCard = ({ product }: { product: Product }) => {
   return (
     <ProductCard>
-      <ProductCardCover source={{ uri: "https://picsum.photos/700" }} />
+      <ProductCardCover source={{ uri: product.image }} />
       <InfoContainer>
-        <ProductNameText>Product Name</ProductNameText>
-        <CategoryText>Eletronic</CategoryText>
-        <PriceText>R$ 55,00</PriceText>
+        <ProductNameText>{product.title}</ProductNameText>
+        <CategoryText>{product.category}</CategoryText>
+        <PriceText>${product.price}</PriceText>
         <Button mode="contained" onPress={() => console.log("Pressed")}>
           COMPRAR
         </Button>
