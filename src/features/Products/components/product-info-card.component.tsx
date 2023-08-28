@@ -1,15 +1,18 @@
-import {} from "styled-components";
-import { StyleSheet, Text } from "react-native";
-import { Card } from "react-native-paper";
+import { Text } from "react-native";
+import {
+  InfoContainer,
+  ProductCard,
+  ProductCardCover,
+} from "./product-info-card.style";
 
 export const ProductInfoCard = () => {
   return (
-    <Card>
-      <Card.Cover source={{ uri: "https://picsum.photos/700" }} />
-      <Card.Content>
+    <ProductCard>
+      <ProductCardCover source={{ uri: "https://picsum.photos/700" }} />
+      <InfoContainer>
         <Text>Card title</Text>
         <Text>Card content</Text>
-      </Card.Content>
-    </Card>
+      </InfoContainer>
+    </ProductCard>
   );
 };
