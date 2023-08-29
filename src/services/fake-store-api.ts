@@ -1,1 +1,1 @@
-//TODO: retirar a chamada de api do CartScreen
+export const allProducts = fetch("https://fakestoreapi.com/products");

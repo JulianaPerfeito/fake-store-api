@@ -1,25 +1,26 @@
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { FlatList } from "react-native";
 import { ProductInfoCard } from "../components/product-info-card.component";
 import Product from "../../../models/product";
 import { Header } from "../components/header.component";
 import { SafeArea } from "../../../components/safe-area.component";
+import IProductContext, {
+  ProductContext,
+} from "../../../contexts/ProductContext";
 
 export const ProductsScreen = () => {
-  const [products, setProducts] = useState<Product[]>();
+  const { product, addProducts } = useContext(
+    ProductContext
+  ) as IProductContext;
 
-  fetch("https://fakestoreapi.com/products")
-    .then((res) => res.json())
-    .then((items) => {
-      setProducts(items);
-    });
+  addProducts();
 
   return (
     <SafeArea>
       <Header />
       <FlatList
-        data={products}
+        data={product}
         renderItem={({ item }) => <ProductInfoCard product={item} />}
         keyExtractor={(item: Product) => item.id.toString()}
       />
