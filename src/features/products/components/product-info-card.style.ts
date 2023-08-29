@@ -3,7 +3,10 @@ import { Card } from "react-native-paper";
 import { View, Text } from "react-native";
 
 export const ProductCard = styled(Card)`
-  margin: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 16px;
+  margin-right: 16px;
 `;
 
 export const ProductCardCover = styled(Card.Cover)`
