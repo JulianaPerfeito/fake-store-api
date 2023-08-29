@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useContext } from "react";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { FlatList } from "react-native";
 import { ProductInfoCard } from "../components/product-info-card.component";
