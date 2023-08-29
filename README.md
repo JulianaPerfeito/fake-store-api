@@ -1,16 +1,19 @@
-Rodando a aplicação no seu PC
+Rodando a aplicação no seu PC.
+
 Faça um clone deste repositório e instale no seu ambiente de desenvolvimento usando o seguinte comando no seu terminal (escolha um diretório apropriado):
 
-git clone [https://github.com/JulianaPerfeito/fake-store-api.git]
-Após clonar o conteúdo do repositório, acesse o diretório criado e efetue a instalação das dependências:
+**git clone [https://github.com/JulianaPerfeito/fake-store-api.git]
+Após clonar o conteúdo do repositório, acesse o diretório criado e efetue a instalação das dependências:**
 
 cd fake-store-api
 
-yarn ou npm install
+**yarn install**
+ou
+nmp install
 
 Após essa instalação execute a aplicação em ambiente de desenvolvimento devidamente configurado, através dos comandos a seguir:
 
-- Executar o Metro Bundler: yarn start ou npm run start.
+**- Executar o Metro Bundler: yarn start ou npm run start.**
 
 - Executar o App com emulador Android: yarn android ou npm run android.
 
