@@ -1,5 +1,7 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { ProductsScreen } from "./src/features/products/screens/ProductsScreen";
+import { CartScreen } from "./src/features/cart/screens/CartScreen";
+import { NavigationContainer } from "@react-navigation/native";
+import AppRoutes from "./src/navigation/index";
 import {
   useFonts as useOswald,
   Oswald_400Regular,
@@ -28,18 +30,8 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <AppRoutes />
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
