@@ -1,15 +1,10 @@
 import { useState } from "react";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
-import {
-  SafeAreaView,
-  StyleSheet,
-  Platform,
-  StatusBar,
-  FlatList,
-} from "react-native";
+import { FlatList } from "react-native";
 import { ProductInfoCard } from "../components/product-info-card.component";
 import Product from "../../../models/product";
 import { Header } from "../components/header.component";
+import { SafeArea } from "../../../components/safe-area.component";
 
 export const ProductsScreen = () => {
   const [products, setProducts] = useState<Product[]>();
@@ -21,7 +16,7 @@ export const ProductsScreen = () => {
     });
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeArea>
       <Header />
       <FlatList
         data={products}
@@ -29,14 +24,6 @@ export const ProductsScreen = () => {
         keyExtractor={(item: Product) => item.id.toString()}
       />
       <ExpoStatusBar style="auto" />
-    </SafeAreaView>
+    </SafeArea>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "white",
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-  },
-});
