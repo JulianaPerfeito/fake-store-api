@@ -10,12 +10,22 @@ import {
 import { Button } from "react-native-paper";
 import Product from "../../../models/product";
 import ICartContext, { CartContext } from "../../../contexts/CartContext";
+import { ToastAndroid } from "react-native";
 
 export const ProductInfoCard = ({ product }: { product: Product }) => {
   const { addItemToCart } = useContext(CartContext) as ICartContext;
 
+  const showToast = () => {
+    ToastAndroid.showWithGravity(
+      "stay natty, kid",
+      ToastAndroid.SHORT,
+      ToastAndroid.CENTER
+    );
+  };
+
   const handleClick = (product: Product) => {
     addItemToCart(product);
+    showToast();
   };
 
   return (
