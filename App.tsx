@@ -10,6 +10,7 @@ import {
   Roboto_900Black,
 } from "@expo-google-fonts/roboto";
 import { CartProvider } from "./src/contexts/CartContext";
+import { ProductProvider } from "./src/contexts/ProductContext";
 
 export default function App() {
   const [oswaldLoaded] = useOswald({
@@ -31,7 +32,9 @@ export default function App() {
   return (
     <NavigationContainer>
       <CartProvider>
-        <AppRoutes />
+        <ProductProvider>
+          <AppRoutes />
+        </ProductProvider>
       </CartProvider>
     </NavigationContainer>
   );
