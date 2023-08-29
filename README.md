@@ -6,11 +6,7 @@ Após clonar o conteúdo do repositório, acesse o diretório criado e efetue a 
 
 cd fake-store-api
 
-yarn
-
-# ou
-
-npm install
+yarn ou npm install
 
 Após essa instalação execute a aplicação em ambiente de desenvolvimento devidamente configurado, através dos comandos a seguir:
 
