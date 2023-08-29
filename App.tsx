@@ -1,5 +1,3 @@
-import { ProductsScreen } from "./src/features/products/screens/ProductsScreen";
-import { CartScreen } from "./src/features/cart/screens/CartScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import AppRoutes from "./src/navigation/index";
 import {
@@ -11,6 +9,7 @@ import {
   useFonts as useRoboto,
   Roboto_900Black,
 } from "@expo-google-fonts/roboto";
+import { CartProvider } from "./src/contexts/CartContext";
 
 export default function App() {
   const [oswaldLoaded] = useOswald({
@@ -31,7 +30,9 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <AppRoutes />
+      <CartProvider>
+        <AppRoutes />
+      </CartProvider>
     </NavigationContainer>
   );
 }
