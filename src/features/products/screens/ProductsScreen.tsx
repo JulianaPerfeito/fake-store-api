@@ -12,7 +12,13 @@ import Product from "../../../models/product";
 import { Header } from "../components/header.component";
 
 export const ProductsScreen = () => {
-  const [products, setProducts] = useState<Product[]>([]);
+  const [products, setProducts] = useState<Product[]>();
+
+  fetch("https://fakestoreapi.com/products")
+    .then((res) => res.json())
+    .then((items) => {
+      setProducts(items);
+    });
 
   return (
     <SafeAreaView style={styles.container}>
