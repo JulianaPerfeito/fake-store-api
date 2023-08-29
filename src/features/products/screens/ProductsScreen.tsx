@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
-import {} from "styled-components";
 import {
   SafeAreaView,
   StyleSheet,
@@ -10,12 +9,14 @@ import {
 } from "react-native";
 import { ProductInfoCard } from "../components/product-info-card.component";
 import Product from "../../../models/product";
+import { Header } from "../components/header.component";
 
 export const ProductsScreen = () => {
   const [products, setProducts] = useState<Product[]>([]);
 
   return (
     <SafeAreaView style={styles.container}>
+      <Header />
       <FlatList
         data={products}
         renderItem={({ item }) => <ProductInfoCard product={item} />}
