@@ -41,7 +41,7 @@ export const CartInfoCard = (
     <CartCard>
       <InfoContainer>
         <ProductNameText>{cart.title}</ProductNameText>
-        <PriceText>TOTAL ${cart.total}</PriceText>
+        <PriceText>TOTAL ${cart.total.toFixed(2)}</PriceText>
       </InfoContainer>
       <Card.Actions>
         <Button onPress={() => handleDecrease(cart)}>-</Button>

@@ -12,7 +12,7 @@ import Product from "../../../models/product";
 import ICartContext, { CartContext } from "../../../contexts/CartContext";
 
 export const ProductInfoCard = ({ product }: { product: Product }) => {
-  const { cart, addItemToCart } = useContext(CartContext) as ICartContext;
+  const { addItemToCart } = useContext(CartContext) as ICartContext;
 
   const handleClick = (product: Product) => {
     addItemToCart(product);
